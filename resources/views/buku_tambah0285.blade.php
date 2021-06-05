@@ -1,4 +1,4 @@
-<form action="{{ route('buku.store') }}" method="post">
+<form action="{{ route('buku0285.store') }}" method="post">
 
     @csrf
     ID: <input type="text" name="buku_id">
