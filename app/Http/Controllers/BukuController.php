@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 use Illuminate\Http\Request;
 
-class BukuController extends Controllers
+class BukuController extends Controller
 {
     public function index(){
 
         $buku = Buku::all();
-        return view('buku', ['buku' -> $buku]);
+        return view('buku0285', ['buku' => $buku]);
     }
 
     public function create(){
@@ -22,8 +22,8 @@ class BukuController extends Controllers
 
         Buku::create([
 
-            'buku_id' => $request->'buku_id',
-            'buku_judul' => $request->'buku_judul',
+            'buku_id' => $request->buku_id,
+            'buku_judul' => $request->buku_judul,
         ]);
 
         return redirect('buku');

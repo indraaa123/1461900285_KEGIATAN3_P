@@ -34,7 +34,7 @@
 <body>
     <div style="overflow-%: auto">
 
-        <a class="tambah" href="{{ route('buku')}}">Tambah Buku</a>
+        <a class="tambah" href="{{ route('buku0285') }}">Tambah Buku</a>
 
         <table>
             <thead>
@@ -54,7 +54,7 @@
                     <td>{{ $bk->buku_id }}</td>
                     <td>{{ $bk->buku_judul }}</td>
                     <td>
-                        <a href="{{ url('buku/' . $bk->id . "/edit") }}">Edit</a>
+                        <a href="{{ url('buku/' . $bk->id . '/edit') }}">Edit</a>
 
                         <form action="{{ url('buku/' . $bk->id) }}" method="post">
                             @csrf
