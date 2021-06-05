@@ -37,7 +37,6 @@ class BukuController extends Controller
     public function edit($id){
 
         $buku = Buku::find($id);
-
         return view('buku_edit0285', ['buku' => $buku]);
 
     }
