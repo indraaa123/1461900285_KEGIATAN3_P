@@ -1,22 +1,23 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1 ">
-    <title>Data Buku</title>
+    <title>DATA BUKU</title>
 
     <style>
+    
         table{
             border-collapse: collaspse;
             border-spacing: 0;
-            width: 100%;
-            border 1px solid #ddd;
+            width: 85%;
+            border 1px solid #ffcce5;
         }
         thead {
 
-            background-color: #f2f2f2;
+            background-color: #66ffff;
         }
         th,
         td {
-            text-alight: left;
-            padding: 8px;
+            text-alight: right;
+            padding: 7px;
         }
         tr:nth-child(even) {
 
@@ -24,7 +25,7 @@
         }
         .tambah {
 
-            padding: 8px 16px;
+            padding: 7px 14px;
             text-decoration: none;
         }
     
@@ -34,7 +35,7 @@
 <body>
     <div style="overflow-%: auto">
 
-        <a class="tambah" href="{{ route('buku0285') }}">Tambah Buku</a>
+        <a class="tambah" href="{{ url('buku0285/') }}">Tambah Buku</a>
 
         <table>
             <thead>
@@ -46,25 +47,26 @@
                 </tr>
             </thead>
             <tbody>
-                <php $no =1; ?>
-                foreach ($buku as $bk)
+                <?php $no = 1; ?>
+                @foreach ($buku as $bk)
 
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $bk->buku_id }}</td>
                     <td>{{ $bk->buku_judul }}</td>
                     <td>
-                        <a href="{{ url('buku/' . $bk->id . '/edit') }}">Edit</a>
+                        <a href="{{ url('buku0285/' . $bk->buku_id . '/edit') }}">Edit</a>
 
-                        <form action="{{ url('buku/' . $bk->id) }}" method="post">
+                        <form action="{{ url('buku0285/' . $bk->buku_id) }}" method="post">
                             @csrf
                             <input type="hidden" name="_method" value="delate">
-                            
+                            <button type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>
-
-                endforeach
+                
+                @endforeach
+            
             </tbody>
         </table>
         
