@@ -26,7 +26,7 @@ class BukuController extends Controller
             'buku_judul' => $request->buku_judul,
         ]);
 
-        return redirect('buku');
+        return redirect('buku0285');
     }
 
     public function show($id){
@@ -49,7 +49,7 @@ class BukuController extends Controller
         $buku->buku_judul = $request->buku_judul;
         $buku->save();
 
-        return redirect('buku');
+        return redirect('buku0285');
 
     }
 
@@ -58,6 +58,6 @@ class BukuController extends Controller
         $buku = Buku::find($id);
         $buku->delete();
 
-        return reirect('buku');
+        return reirect('buku0285');
     }
 }

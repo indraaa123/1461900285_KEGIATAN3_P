@@ -1,4 +1,4 @@
-<form action="{{ url('buku/' . $buku->id }}" method="post">
+<form action="{{ url('buku0285/' . $buku->id }}" method="post">
 
     @csrf
     <input type="hidden" name="_metod" value="patch">
